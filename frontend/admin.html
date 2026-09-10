@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | Company Ticket System</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="dashboard-header">
+
+        <div>
+            <h1>Admin Dashboard</h1>
+
+            <p>
+                Manage company users, tickets, assignments and support operations
+            </p>
+        </div>
+
+        <button
+            class="logout-btn"
+            onclick="logout()"
+        >
+            Logout
+        </button>
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN DASHBOARD
+    ========================== -->
+
+    <main class="dashboard-container">
+
+
+        <!-- =========================
+             STATISTICS
+        ========================== -->
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+
+                <span>Total Users</span>
+
+                <strong id="totalUsers">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>Total Tickets</span>
+
+                <strong id="totalTickets">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>Open Tickets</span>
+
+                <strong id="openTickets">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>In Progress</span>
+
+                <strong id="progressTickets">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>Resolved</span>
+
+                <strong id="resolvedTickets">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>Closed</span>
+
+                <strong id="closedTickets">
+                    0
+                </strong>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             USERS
+        ========================== -->
+
+        <section class="dashboard-card">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>Users</h2>
+
+                    <p class="section-description">
+                        Manage company users and their roles.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="secondary-btn"
+                    onclick="loadAdminUsers()"
+                >
+                    Refresh
+                </button>
+
+            </div>
+
+
+            <div id="adminUsers">
+
+                <p>
+                    Loading users...
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             ALL TICKETS
+        ========================== -->
+
+        <section class="dashboard-card">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>All Tickets</h2>
+
+                    <p class="section-description">
+                        Monitor, assign and manage all company support tickets.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="secondary-btn"
+                    onclick="loadAdminTickets()"
+                >
+                    Refresh
+                </button>
+
+            </div>
+
+
+
+            <!-- =========================
+                 FILTERS
+            ========================== -->
+
+            <div class="filter-container">
+
+                <select id="adminStatusFilter">
+
+                    <option value="">
+                        All Status
+                    </option>
+
+                    <option value="open">
+                        Open
+                    </option>
+
+                    <option value="in progress">
+                        In Progress
+                    </option>
+
+                    <option value="resolved">
+                        Resolved
+                    </option>
+
+                    <option value="closed">
+                        Closed
+                    </option>
+
+                </select>
+
+
+
+                <select id="adminPriorityFilter">
+
+                    <option value="">
+                        All Priority
+                    </option>
+
+                    <option value="modrate">
+                        Modrate
+                    </option>
+
+                    <option value="medium">
+                        Medium
+                    </option>
+
+                    <option value="high">
+                        High
+                    </option>
+
+                </select>
+
+
+
+                <button
+                    class="secondary-btn"
+                    onclick="loadAdminTickets()"
+                >
+                    Apply Filters
+                </button>
+
+            </div>
+
+
+
+            <!-- =========================
+                 TICKET DATA
+            ========================== -->
+
+            <div id="adminTickets">
+
+                <p>
+                    Loading tickets...
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>

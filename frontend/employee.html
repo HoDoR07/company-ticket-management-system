@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Employee Dashboard | Company Ticket System
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="/static/style.css"
+    >
+</head>
+
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="dashboard-header">
+
+        <div>
+
+            <h1>Employee Dashboard</h1>
+
+            <p>
+                Manage and track your support tickets
+            </p>
+
+        </div>
+
+        <button
+            class="logout-btn"
+            onclick="logout()"
+        >
+            Logout
+        </button>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN DASHBOARD
+    ========================== -->
+
+    <main class="dashboard-container">
+
+
+        <!-- =========================
+             PROFILE
+        ========================== -->
+
+        <section class="dashboard-card">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>My Profile</h2>
+
+                    <p class="section-description">
+                        View and update your account information
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <button
+                        class="secondary-btn"
+                        onclick="editEmployeeProfile()"
+                    >
+                        Edit Profile
+                    </button>
+
+                    <button
+                        class="secondary-btn"
+                        onclick="loadEmployeeProfile()"
+                    >
+                        Refresh
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="employeeProfile"
+                class="profile-content"
+            >
+                Loading profile...
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CREATE TICKET
+        ========================== -->
+
+        <section class="dashboard-card">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>Create New Ticket</h2>
+
+                    <p class="section-description">
+                        Report an issue or request support from
+                        the company team.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <form id="ticketForm">
+
+
+                <!-- TITLE -->
+
+                <div class="form-group">
+
+                    <label for="ticketTitle">
+                        Ticket Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="ticketTitle"
+                        placeholder="e.g. Laptop is not connecting to Wi-Fi"
+                        maxlength="200"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- DESCRIPTION -->
+
+                <div class="form-group">
+
+                    <label for="ticketDescription">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="ticketDescription"
+                        placeholder="Describe your issue in detail..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- INFO -->
+
+                <div class="ticket-info">
+
+                    <span>
+                        Default priority:
+                        <strong>Medium</strong>
+                    </span>
+
+                    <span>
+                        Priority is assigned by Admin
+                    </span>
+
+                </div>
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+                    Create Ticket
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- =========================
+             MY TICKETS
+        ========================== -->
+
+        <section class="dashboard-card">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>My Tickets</h2>
+
+                    <p class="section-description">
+                        View and manage the support tickets
+                        you created.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="secondary-btn"
+                    onclick="loadEmployeeTickets()"
+                >
+                    Refresh
+                </button>
+
+            </div>
+
+
+            <div id="employeeTickets">
+
+                <p>
+                    Loading tickets...
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>
